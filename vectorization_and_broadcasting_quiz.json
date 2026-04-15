@@ -1,0 +1,71 @@
+[
+    {
+        "question": "You have an array A with shape (5, 3) and an array B with shape (3,). If you try to perform A + B, what happens according to the broadcasting rules?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "It fails because NumPy cannot stretch a 1D array vertically.",
+                "correct": false
+            },
+            {
+                "answer": "It works, and the resulting shape is (5,3).",
+                "correct": true,
+                "feedback": "That's right! NumPy aligns the trailing dimensions (3 and 3), finds them equal, and then 'stretches' the 1D array across the 5 rows."
+            },
+            {
+                "answer": "It works, but the resulting shape is (3,5).",
+                "correct": false
+            },
+            {
+                "answer": "It fails because the number of dimensions (rank) does not match.",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "question": "Which of the following pair of shapes will FAIL to broadcast?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "Array A: (8, 1, 6) and Array B: (6,)",
+                "correct": false
+            },
+            {
+                "answer": "Array A: (4, 3) and Array B: (4, 1)",
+                "correct": false
+            },
+            {
+                "answer": "Array A: (4, 3) and Array B: (4, 2)",
+                "correct": true,
+                "feedback": "That's right! When aligning from the right, 3 and 2 are not equal, and neither is 1, so they cannot be aligned."
+            },
+            {
+                "answer": "Array A: (10, 1, 5) and Array B: (1, 7, 1)",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "question": "If you add an array of shape (5, 1) to an array of shape (1, 4), what is the shape of the resulting array?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "This operation will result in a ValueError.",
+                "correct": false
+            },
+            {
+                "answer": "(1, 1)",
+                "correct": false
+            },
+            {
+                "answer": "(5, 4)",
+                "correct": true,
+                "feedback": "That's right! Both arrays stretch: the first array stretches its columns from 1 to 4, and the second stretches its rows from 1 to 5."
+            },
+            {
+                "answer": "(5, 1)",
+                "correct": false
+            }
+        ]
+    }
+]
